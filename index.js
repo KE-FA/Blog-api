@@ -45,7 +45,10 @@ app.get("/users/:id", async (req, res) => {
 
     const specificUser = await client.users.findUnique({
       where: {
-        id,
+        id  
+      },
+      include: {
+        post: true
       },
     });
 
